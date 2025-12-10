@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AiSure 愛加｜RegTech 長照流程強化器</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <style>
+        :root {
+            --primary-color: #2a7de1; /* 醫療藍 */
+            --secondary-color: #00a6a6; /* 科技綠藍 */
+            --accent-color: #4cc9f0;
+            --bg-gradient: linear-gradient(135deg, #e8f3ff, #f7fbff);
+            --text-dark: #1f1f1f;
+            --text-light: #ffffff;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+            margin: 0;
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        /* --- Header 樣式 --- */
+        header {
+            background-image: url('aisurefoot.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            min-height: 300px;
+            color: var(--text-dark);
+            padding: 70px 20px 90px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before,
+        header::after {
+            content: none;
+        }
+        
+        /* 標題遮罩 */
+        .header-text-backdrop {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-bottom: 25px;
+            background-color: rgba(255, 255, 255, 0.7); 
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-placeholder {
+            width: 180px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            line-height: 50px;
+            font-size: 1.6em;
+            border-radius: 8px;
+            margin: 0 auto 25px;
+            font-weight: bold;
+        }
+
+        header h1 {
+            color: var(--text-dark); 
+            font-size: 2.7em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: var(--text-dark); 
+            font-size: 1.25em;
+            opacity: 0.92;
+            margin-top: 0;
+        }
+
+        /* CTA Buttons */
+        .cta-group {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .cta-button {
+            padding: 15px 35px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05em;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .cta-primary {
+            background-color: var(--accent-color);
+            color: #003049;
+        }
+        .cta-secondary {
+            background-color: #ffffff;
+            color: var(--primary-color);
+            border: 2px solid #fff;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            margin: 60px 0 35px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .section-title span {
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 4px;
+        }
+
+        /* Pain / Solution */
+        .pain-solution {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .pain-box, .solution-box {
+            flex: 1 1 48%;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+
+        .pain-box {
+            border-left: 6px solid #e63946;
+            background: #ffeef0;
+        }
+        .solution-box {
+            border-left: 6px solid #2a9d8f;
+            background: #e9f7f5;
+        }
+
+        .pain-box ul, .solution-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        /* Feature Grid - 關鍵調整區塊 */
+        /* --- 三大核心創新：固定三欄橫排 ＋ 縮小圖片 --- */
+.feature-grid {
+    display: flex;
+	justify-content: center; /* 讓區塊置中 */
+    flex-wrap: nowrap; /* 強制一排 */
+    gap: 20px;
+}
+
+.feature-item {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    flex: 0 0 calc(33.33% - 20px); /* 固定三欄 */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;       /* 圖片水平置中 */
+}
+
+/* 圖片縮小＋統一高度 */
+.feature-item img {
+    width: 100%;
+    height: 200px;          /* 圖片統一高度，可微調 150~200px */
+    max-height: 200px;     /* 控制圖片不要太高，可調 160–240 */
+    object-fit: contain;   /* 保持原比例，不裁切 */
+    border-radius: 8px;
+    margin-bottom: 15px;
+	display: block;
+    margin: 0 auto 15px auto;  /* 手動置中備援 */
+}
+
+/* 手機版自動變為單欄 */
+@media (max-width: 768px) {
+    .feature-grid {
+        flex-wrap: wrap;
+    }
+    .feature-item {
+        flex: 1 1 100%;
+    }
+}
+
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-item .material-icons {
+            font-size: 3em;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1b2a41;
+            color: var(--text-light);
+            padding: 45px 20px;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        footer .cta-button {
+            margin-top: 15px;
+            background: var(--secondary-color);
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pain-box, .solution-box, .feature-item {
+                flex: 1 1 100%;
+            }
+            header h1 {
+                font-size: 2.1em;
+            }
+            .cta-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo-placeholder">AiSure</div>
+            
+            <div class="header-text-backdrop">
+                <h1>AiSure｜RegTech 驅動的長照流程加速器</h1>
+                <p>台灣首個以法遵科技串接長照流程的智慧媒合平台</p>
+            </div>
+            <div class="cta-group">
+                <a href="https://lin.ee/0iSBFjfe" target="_blank" class="cta-button cta-primary">A 單位｜媒合點數方案</a>
+                <a href="https://lin.ee/0iSBFjfe" target="_blank" class="cta-button cta-secondary">B 單位 & 個案｜免費體驗</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="section-title"><span>痛點對照</span>：從低效到即時的流程進化</h2>
+
+        <div class="pain-solution">
+            <div class="pain-box">
+                <h4>💔 現行流程的效率黑洞</h4>
+                <ul>
+                    <li>大量時間耗費在打電話確認 B 單位量能</li>
+                    <li>1966 轉接等待，平均需 2 週才能正式展開服務]</li>
+                    <li>家屬需向不同單位重複敘述病況，造成情緒負擔</li>
+                </ul>
+            </div>
+
+            <div class="solution-box">
+                <h4>✅ AiSure 即時媒合方案</h4>
+                <ul>
+                    <li>法規區域演算法自動篩選可服務單位</li>
+                    <li>需求一鍵送出，全區合規機構即時收到</li>
+                    <li>降電話量、降行政成本、降等待時間 </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title"><span>三大核心優勢</span>：打造醫療級的信任感</h2>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="material-icons">assignment_turned_in</span>
+                <h3>法規區域 Zoning 演算引擎</h3>
+                <p>將全台長照分區法規（如台中 7 區 8 小區限制）資料庫化。輸入地址即可自動過濾所有合規可派案單位，有效降低 90% 行政查核時間。</p>
+            </div>
+
+            <div class="feature-item">
+                <span class="material-icons">switch_account</span>
+                <h3>雙向評價系統 (奧客篩選)</h3>
+                <p>除了個案評價機構 (C→B) 促進良性競爭，更引入**機構評價個案 (B→C) 機制** 。有效篩選客戶，保障優質照服員。 </p>
+            </div>
+
+            <div class="feature-item">
+                <span class="material-icons">security</span>
+                <h3>AIoT 數據串接與智慧安防</h3>
+                <p>整合智慧輔具警示（跌倒、離床等]，訊號即時回傳 AiSure 平台。提供服務紀錄、個案需求等，成為**「長照產業的行車紀錄器」** ，建立法律證據鏈。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title"><span>三大核心創新</span>：以 RegTech 建立信任與效率</h2>
+        
+        <div class="feature-grid" style="gap: 30px;">
+            
+            <div class="feature-item">
+                <img src="ai1.png" alt="Zoning 合規演算法圖示" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
+                <h3>獨家「Zoning 合規演算法」電子圍籬技術</h3>
+                <p>將全台長照分區法規資料庫化，自動過濾合規可服務單位，有效降低行政成本，提升派案效率。</p>
+            </div>
+            
+            <div class="feature-item">
+                <img src="ai2.png" alt="雙向評價圖示" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
+                <h3>雙向評價系統，以「信任」啟動飛輪</h3>
+                <p>除了個案評價機構 (C→B)，更引入機構評價個案 (B→C) 機制，有效篩選客戶，保障優質照服員。</p>
+            </div>
+            
+            <div class="feature-item">
+                <img src="ai3.png" alt="AIoT 智慧安防圖示" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
+                <h3>Aiot 智慧安防，長照產業的「中控平台」</h3>
+                <p>整合智慧輔具警示數據，提供即時安全儀表板，成為長照產業的「行車紀錄器」，建立法律證據鏈。</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3>🤝 立即加入 AiSure，成為長照生態系統的關鍵參與者！</h3>
+            <p>我們的策略是驗證「區域飽和」模型，終局目標是成為「亞洲高齡照護的數據入口」。</p>
+            
+            <a href="https://lin.ee/0iSBFjfe" target="_blank" class="cta-button cta-primary" style="background-color: var(--secondary-color);">👉 點擊加入 Line 官方帳號（Line ID: @064gjsla）</a>
+            
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.7;">© 2025 AiSure (愛加). [cite_start]All Rights Reserved.**零風險聲明：** 媒合對象為個案/A單位與長照機構(B單位)，符合長照法規。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
