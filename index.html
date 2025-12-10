@@ -95,6 +95,11 @@
             font-size: 1.05em;
             transition: 0.3s;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+			white-space: normal;      /* 允許自動換行 */
+    word-break: break-word;   /* 長字串自動斷行 */
+    text-align: center;       /* 按鈕內文字置中 */
+    width: 100%;              /* 讓按鈕在手機版自適應整行 */
+    box-sizing: border-box;   /* 避免 padding 撐爆寬度 */
         }
         .cta-primary {
             background-color: var(--accent-color);
@@ -315,19 +320,19 @@
         <div class="feature-grid" style="gap: 30px;">
             
             <div class="feature-item">
-                <img src="Ai1.png" alt="Zoning 合規演算法圖示" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
+                <img src="ai1.png" alt="Zoning 合規演算法圖示" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
                 <h3>獨家「Zoning 合規演算法」電子圍籬技術</h3>
                 <p>將全台長照分區法規資料庫化，自動過濾合規可服務單位，有效降低行政成本，提升派案效率。</p>
             </div>
             
             <div class="feature-item">
-                <img src="Ai2.png" alt="雙向評價圖示" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
+                <img src="ai2.png" alt="雙向評價圖示" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
                 <h3>雙向評價系統，以「信任」啟動飛輪</h3>
                 <p>除了個案評價機構 (C→B)，更引入機構評價個案 (B→C) 機制，有效篩選客戶，保障優質照服員。</p>
             </div>
             
             <div class="feature-item">
-                <img src="Ai3.png" alt="AIoT 智慧安防圖示" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
+                <img src="ai3.png" alt="AIoT 智慧安防圖示" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
                 <h3>Aiot 智慧安防，長照產業的「中控平台」</h3>
                 <p>整合智慧輔具警示數據，提供即時安全儀表板，成為長照產業的「行車紀錄器」，建立法律證據鏈。</p>
             </div>
@@ -348,4 +353,3 @@
 
 </body>
 </html>
-
